@@ -22,12 +22,12 @@ Lets explore together how we can use satellite data to enable tailored financial
 With this team we addressing Challenge #2: Innovating financial tools and technologies
 
 
-🤼 Team
+## 🤼 Team
 
 [TBD]
 
 
-  Resources
+## Resources
 
 Podcast: Catalysing Inclusive Finance - https://g4aw.spaceoffice.nl/en/resources/podcast/159/episode-iii.-catalysing-inclusive-finance.html
 
