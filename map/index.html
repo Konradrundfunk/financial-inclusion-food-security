@@ -14,12 +14,19 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" integrity="sha512-07I2e+7D8p6he1SIM+1twR5TIrhUQn9+I6yjqD53JQjFiMf8EtC93ty0/5vJTZGF8aAocvHYNEDJajGdNx1IsQ==" crossorigin="" />
     <link href="https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap" rel="stylesheet">
 
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="" />
+    <link rel="stylesheet" href="https://unpkg.com/@bopen/leaflet-area-selection@0.6.1/dist/index.css" />
+
     <script src="https://cdn.jsdelivr.net/npm/lazyload@2.0.0-rc.2/lazyload.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet-src.js" integrity="sha512-WXoSHqw/t26DszhdMhOXOkI7qCiv5QWXhH9R7CgvgZMHz1ImlkVQ3uNsiQKu5wwbbxtPzFXd1hK4tzno2VqhpA==" crossorigin=""></script>
+    <!--<script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet-src.js" integrity="sha512-WXoSHqw/t26DszhdMhOXOkI7qCiv5QWXhH9R7CgvgZMHz1ImlkVQ3uNsiQKu5wwbbxtPzFXd1hK4tzno2VqhpA==" crossorigin=""></script>-->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
     <script src="js/leaflet.markercluster-src.js"></script>
+
+    <link rel="stylesheet" href="https://unpkg.com/@bopen/leaflet-area-selection@0.6.1/dist/index.css" />
+    <script src="https://unpkg.com/@bopen/leaflet-area-selection@0.6.1/dist/index.umd.js"></script>
 
     <style>
         html, body, #map { width: 100%; height: 100%; margin: 0; background: #fff; }
@@ -32,8 +39,8 @@
     </script>
 </head>
 <body>
-    <div id="map" class="map"></div>
-
+    <div id="map" class="map" style="z-index: 0"></div>
+  <!--<pre id="polygon" class="show-selection" style="position: absolute; z-index: 69">Nothing selected</pre>-->
   <script type="text/javascript">
     var LeafIcon = L.Icon.extend({
         options: {
@@ -65,8 +72,39 @@
             marker.bindPopup(title);
             markers.addLayer(marker);
         }
+
+
+
      map.addLayer(markers);
 
+
+
+const areaSelection = new window.leafletAreaSelection.DrawAreaSelection({
+  onPolygonReady: (polygon) => {
+    //const preview = document.getElementById('polygon');
+    alert(JSON.stringify(polygon.toGeoJSON(3), undefined, 2));
+    //preview.textContent = JSON.stringify(polygon.toGeoJSON(3), undefined, 2);
+    //preview.scrollTop = preview.scrollHeight;
+  }
+});
+  //      const areaSelection = new window.leafletAreaSelection.DrawAreaSelection();
+
+//map.on('onPolygonDblClick', (e) => {
+//  alert(e); // lon, lat, lon, lat
+//});
+        map.addControl(areaSelection);
+
+
+
+//console.log(str); // Logs output to dev tools console.
+//alert(areaSelection); // Displays output using window.alert()
+
+//map.selectArea.enable();
+
+
+
+//map.dragging.enable();
+//map.selectArea.setCtrlKey(false);
      // if we want to add image tiles to the map
      //L.tileLayer('assets/tiles/{z}/{x}/{y}.png', { tms: false,}).addTo(map);
 
