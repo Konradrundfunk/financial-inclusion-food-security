@@ -15,7 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from api.views import getting_score
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api/v1/', getting_score),
 ]
