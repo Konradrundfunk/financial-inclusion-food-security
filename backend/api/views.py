@@ -14,4 +14,7 @@ def getting_score(request):
         return JsonResponse(response)
 
     else:
-        return HttpResponseNotAllowed("Not allowed")
+        return render(request, "initial_map.html")
+
+def index(request):
+    return render(request, "index.html")

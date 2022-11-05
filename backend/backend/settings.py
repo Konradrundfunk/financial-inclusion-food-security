@@ -22,11 +22,19 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-cvt(%smgqcdq4=!+7k0nipr6#r1!4!ce3p7k2gp3@j+m%y%%gl'
 
+
+CSRF_TRUSTED_ORIGINS = ['http://localhost:8080']
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
 ALLOWED_HOSTS = ["127.0.0.1"]
 
+STATIC_URL = 'static/'
+#STATIC_ROOT = 'static/'
+STATICFILES_DIRS = [
+    "./static",
+]
 
 # Application definition
 
@@ -54,7 +62,7 @@ ROOT_URLCONF = 'backend.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ["api/template"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
