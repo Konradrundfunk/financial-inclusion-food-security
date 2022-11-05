@@ -1,0 +1,11 @@
+{
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "driver": "SQLite",
+            "name": "Test",
+            "database": "${workspaceFolder:financial-inclusion-food-security}/backend/db.sqlite3"
+        }
+    ],
+    "sqltools.useNodeRuntime": true
+}

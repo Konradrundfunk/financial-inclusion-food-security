@@ -1,7 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponseNotAllowed, HttpResponse, JsonResponse
-
-
+from .models import Country, Project
 
 def invest(request):
     return render(request, "initial_map.html")
@@ -10,15 +9,21 @@ def index(request):
     return render(request, "index.html")
 
 def country(request, country):
+    all_country_data = Country.objects.all()
+    for country_data in all_country_data:
+        if country_data.name == country:
+            break
+    
+    all_project_data= Project.objects.all()
+    project_data = []
+    for y in all_project_data:
+        if y.country == country_data:
+            project_data.append(y)
+
     state = {
-        "country": country,
-        "detail" : "Angola, is a country located on the west coast of Southern Africa. It is the second-largest Portuguese-speaking country in both total area and population, and is the seventh-largest country in Africa. It is bordered by Namibia to the south, the Democratic Republic of the Congo to the north, Zambia to the east, and the Atlantic Ocean to the west.",
+        "country": country_data.name,
+        "description" : country_data.description,
         "emoji" : "🇦🇴",
-        "data" : [
-            {
-                "headline" : "Projekt 1",
-                "text": "123123123"
-            }
-        ]
+        "data" : project_data
     }
     return render(request, "detail.html", state)

@@ -92,15 +92,15 @@
     ">
       <div class="container-fluid py-5">
         <h1 class="display-5 fw-bold">{{ emoji }} {{ country }}</h1>
-        <p class="col-md-8 fs-4 tg-white">{{ detail }}</p>
+        <span class="col-md-8 fs-5 tg-white fs-3 fw-semibold">{{ description }}</span>
       </div>
     </div>
 
     {% for i in data %}
         <div class="col-md-6">
             <div class="h-100 p-5 bg-light border rounded-3">
-            <h2>{{i.headline}}</h2>
-            <p>{{i.text}}</p>
+            <h2>{{i.name}}</h2>
+            <p>{{i.description}}</p>
             <button class="btn btn-outline-secondary" type="button">Example button</button>
             </div>
         </div>
