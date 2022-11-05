@@ -33,17 +33,16 @@
     <style>
         html, body, #map { width: 100%; height: 100%; margin: 0; background: #fff; }
     </style>
-    <script type="text/javascript">
-     // here we can add all farmers location points
-     var addressPoints = [
-          [-15.527791, 12.678223, "text", "dogeFarmer"],
-     ]
-    </script>
+
 </head>
 <body>
     <div id="map" class="map" style="z-index: 0"></div>
   <!--<pre id="polygon" class="show-selection" style="position: absolute; z-index: 69">Nothing selected</pre>-->
   <script type="text/javascript">
+      var addressPoints = [
+          [-15.527791, 12.678223, "text", "dogeFarmer"],
+     ]
+
     var LeafIcon = L.Icon.extend({
         options: {
            iconSize:     [38, 38]
@@ -52,7 +51,6 @@
     var dogeFarmer = new LeafIcon({
         iconUrl: "{% static 'img/DogeFarmer.gif' %}"
     });
-
 
 
     var tiles = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -74,44 +72,7 @@
             marker.bindPopup(title);
             markers.addLayer(marker);
         }
-
-
-
-     map.addLayer(markers);
-
-
-
-const areaSelection = new window.leafletAreaSelection.DrawAreaSelection({
-  onPolygonReady: (polygon) => {
-    //const preview = document.getElementById('polygon');
-    alert(JSON.stringify(polygon.toGeoJSON(3), undefined, 2));
-    //preview.textContent = JSON.stringify(polygon.toGeoJSON(3), undefined, 2);
-    //preview.scrollTop = preview.scrollHeight;
-  }
-});
-  //      const areaSelection = new window.leafletAreaSelection.DrawAreaSelection();
-
-//map.on('onPolygonDblClick', (e) => {
-//  alert(e); // lon, lat, lon, lat
-//});
-        map.addControl(areaSelection);
-
-
-
-//console.log(str); // Logs output to dev tools console.
-//alert(areaSelection); // Displays output using window.alert()
-
-//map.selectArea.enable();
-
-
-
-//map.dragging.enable();
-//map.selectArea.setCtrlKey(false);
-     // if we want to add image tiles to the map
-     //L.tileLayer('assets/tiles/{z}/{x}/{y}.png', { tms: false,}).addTo(map);
-
-     // if we want to add markers manually to the map
-     //L.marker([51.5122267680323,-0.08994483058905306], { title: "text here",icon: dogeFarmer }).addTo(map).bindPopup("text here");
+        map.addLayer(markers);
 
 </script>
 </body>

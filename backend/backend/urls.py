@@ -15,11 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from api.views import getting_score, index
+from api.views import invest, index
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('init', getting_score),
+    path('invest', invest),
     path('', index),
 ]
