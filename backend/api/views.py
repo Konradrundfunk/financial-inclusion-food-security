@@ -29,3 +29,5 @@ def country(request, country):
         "data" : project_data
     }
     return render(request, "detail.html", state)
+
+
