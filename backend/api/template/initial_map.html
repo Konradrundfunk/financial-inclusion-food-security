@@ -6,29 +6,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Financial Inclusion Food Security!</title>
-    <meta name="description" content="team02 - Financial Inclusion Food Security!">
-    <meta name="description" content="team02 - Financial Inclusion Food Security!">
-    <meta name="author" content="team02">
-    <meta name="generator" content="You!">
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" integrity="sha512-07I2e+7D8p6he1SIM+1twR5TIrhUQn9+I6yjqD53JQjFiMf8EtC93ty0/5vJTZGF8aAocvHYNEDJajGdNx1IsQ==" crossorigin="" />
-    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="" />
-    <link rel="stylesheet" href="https://unpkg.com/@bopen/leaflet-area-selection@0.6.1/dist/index.css" />
-
-    <script src="https://cdn.jsdelivr.net/npm/lazyload@2.0.0-rc.2/lazyload.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script>
-    <!--<script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet-src.js" integrity="sha512-WXoSHqw/t26DszhdMhOXOkI7qCiv5QWXhH9R7CgvgZMHz1ImlkVQ3uNsiQKu5wwbbxtPzFXd1hK4tzno2VqhpA==" crossorigin=""></script>-->
-    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
-    <script src="{% static 'js/leaflet.markercluster-src.js' %}"></script>
-
-    <link rel="stylesheet" href="https://unpkg.com/@bopen/leaflet-area-selection@0.6.1/dist/index.css" />
-    <script src="https://unpkg.com/@bopen/leaflet-area-selection@0.6.1/dist/index.umd.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 
     <style>
         html, body, #map { width: 100%; height: 100%; margin: 0; background: #fff; }
@@ -39,47 +18,32 @@
     <header class="border-bottom pt-2 pb-2">
         <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
           <span class="fs-3">🌾</span>
-          <span class="fs-4 fw-semibold">Name</span>
+          <span class="fs-4 fw-semibold">Satshield</span>
         </a>
       </header>
-  
-    <div id="map" class="map" style="z-index: 0"></div>
-  <script type="text/javascript">
-      var addressPoints = [
-          [-15.527791, 12.678223, "text", "dogeFarmer"],
-     ]
+      <iframe width='100%' height='60%' src="https://api.mapbox.com/styles/v1/konradrundfunnk/cla58kkm6000b14ns7uvry9gu.html?title=false&access_token=pk.eyJ1Ijoia29ucmFkcnVuZGZ1bm5rIiwiYSI6ImNsYTU4YnhuaTA0a2gzb3F6ZTdnanJ4NmMifQ.eb9lGZf_fzHqo4GRJAsztw&zoomwheel=false#3.83/-14.83/31.85" title="Blank" style="border:none;"></iframe></body>
+      
+      
+      <div class="container-flex rounded-3 p-4 m-4 bg-success bg-gradient" id="getting-started">
+        <h1 class="p-3 text-light">Our Angola projects.</h1>
+        <a href="/invest/country/angola"><button class="btn btn-primary mb-3" type="button">All projects.</button></a>
 
-    var LeafIcon = L.Icon.extend({
-        options: {
-           iconSize:     [38, 38]
-        }
-    });
-    var dogeFarmer = new LeafIcon({
-        iconUrl: "{% static 'img/DogeFarmer.gif' %}"
-    });
-
-
-    var tiles = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: 'team02'
-      }),
-
-
-        latlng = L.latLng(-15.527791, 12.678223);
-
-    var map = L.map('map', {center: latlng, zoom: 6, minZoom: 1, detectRetina: true, layers: [tiles]});
-
-    var markers = L.markerClusterGroup();
-
-    for (var i = 0; i < addressPoints.length; i++) {
-        var a = addressPoints[i];
-        var title = a[2];
-            var marker = L.marker(new L.LatLng(a[0], a[1]), { title: title,icon: dogeFarmer });
-
-        marker.bindPopup(title);
-        markers.addLayer(marker);
-    }
-    map.addLayer(markers);
-
-</script>
-</body>
+        <div class="row align-items-md-stretch">
+          <div class="col-md-6">
+            <div class="h-100 p-5 bg-light border rounded-3">
+              <h2>Namibe</h2>
+              <p>Agriculture is the main source of income in Namibe Province, the principal crops being citrus fruits, olives, guava, millet, and livestock, including the rearing of sheep and goats. The region is very mountainous and does not provide good conditions for agriculture.</p>
+            </div>
+          </div>
+          <div class="col-md-6 align-middle">
+            <div class="h-100 p-5 bg-light rounded-3">
+              <h2>Huambo</h2>
+              <p>Huambo is the richest agricultural province in Angola. The Province produces almost 22% of total national cereal production. Despite that there is still an large smallholder farmer population with no proper access to financial services.</p>
+    
+            </div>
+          </div>
+    
+        </div>
+      </div>    
+    
 </html>
