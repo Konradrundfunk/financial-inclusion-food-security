@@ -90,22 +90,34 @@
         background-repeat: no-repeat;
         background-size: cover;
     ">
-      <div class="container-fluid py-5">
-        <h1 class="display-5 fw-bold">{{ emoji }} {{ country }}</h1>
-        <span class="col-md-8 fs-5 tg-white fs-3 fw-semibold">{{ description }}</span>
-      </div>
-    </div>
+      <div class="container-fluid py-5 bg-light rounded-3 mb-4 p-3">
+        <h1 class="display-5 fw-bold ">{{ emoji }} {{ country }}</h1>
+        <span class="col-md-8 tg-white pb-1 fs-5 fw-semibold">{{ description|linebreaks }}</span>
+        <p class="fs-6 ">{{ secondary_text|linebreaks }} </p>
 
+      </div>
+
+    <div class="container">
+
+    <div class="row row-cols-1 row-cols-lg-2 g-1 g-lg-3">
     {% for i in data %}
-        <div class="col-md-6">
-            <div class="h-100 p-5 bg-light border rounded-3">
-            <h2>{{i.name}}</h2>
-            <p>{{i.description}}</p>
-            <button class="btn btn-outline-secondary" type="button">Example button</button>
+      <div class="col">
+        <div class="h-100 p-5 text-bg-dark rounded-3">
+          <h2>{{ i.name }}</h2> 
+          <div class="alert alert-primary d-flex align-items-center" role="alert">
+            <div class="fs-5 fw-semibold">
+              🛰️ Our score: {{ i.score }}/200
             </div>
+          </div>
+          <p>{{ i.description|linebreaks }}</p>
+          <button class="btn btn-primary" type="button">Boost Project 🚀</button>
         </div>
-        </div>
+      </div>
+      
     {% endfor %}
+    </div>
+  </div>
+</div>
     <footer class="pt-3 mt-4 text-muted border-top">
       &copy; 2022
     </footer>

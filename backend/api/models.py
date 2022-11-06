@@ -8,6 +8,7 @@ class Country(models.Model):
     location = models.CharField(max_length=40)
     emoji = models.CharField(max_length=1)
     description = models.CharField(max_length=600)
+    secondary_text = models.CharField(max_length = 900)
 
 
 class Project(models.Model):

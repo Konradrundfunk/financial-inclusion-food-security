@@ -9,9 +9,10 @@ def index(request):
     return render(request, "index.html")
 
 def country(request, country):
+    print(country)
     all_country_data = Country.objects.all()
     for country_data in all_country_data:
-        if country_data.name == country:
+        if country_data.name.lower() == country.lower():
             break
     
     all_project_data= Project.objects.all()
@@ -22,7 +23,8 @@ def country(request, country):
 
     state = {
         "country": country_data.name,
-        "description" : country_data.description,
+        "description": country_data.description,
+        "secondary_text": country_data.secondary_text,
         "emoji" : "🇦🇴",
         "data" : project_data
     }
